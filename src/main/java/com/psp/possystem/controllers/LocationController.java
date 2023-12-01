@@ -7,16 +7,12 @@ import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.psp.possystem.exceptions.NotFoundException;
-
-import jakarta.validation.constraints.Positive;
 
 @RequestMapping("/locations")
 @RestController
@@ -31,10 +27,7 @@ public class LocationController {
 		return location;
 	}
 	@GetMapping()
-	public ExistingLocation getLocationById(@RequestParam String id) throws NotFoundException {
-		if (id.contains("1")) {
-			throw new NotFoundException(String.format("Location with id = %s not found", id));
-		}
+	public ExistingLocation getLocationById(@RequestParam String id) {
 		ExistingLocation dummyLocation = new ExistingLocation("table", "cool table near window");
 		dummyLocation.id = id;
 		return dummyLocation;

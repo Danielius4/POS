@@ -1,4 +1,4 @@
-package com.psp.possystem.DTOs;
+package com.psp.possystem.dto;
 
 import java.time.OffsetDateTime;
 import nonapi.io.github.classgraph.json.Id;

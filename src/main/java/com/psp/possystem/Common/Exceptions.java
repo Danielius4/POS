@@ -1,4 +1,4 @@
-package com.psp.possystem.Common;
+package com.psp.possystem.common;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.client.HttpServerErrorException;

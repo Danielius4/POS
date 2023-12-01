@@ -1,4 +1,4 @@
-package com.psp.possystem.Query;
+package com.psp.possystem.query;
 
 import java.util.List;
 

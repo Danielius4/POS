@@ -72,8 +72,6 @@ public class ItemsController {
 
 @NotNull
 class Item {
-	public String id;
-	public String clientId;
 	public String name;
 	public double price;
 	public String description;
@@ -87,6 +85,7 @@ class ExistingItem extends Item {
 }
 
 class ItemGetResponse {
+	Item item;
 	List<String> taxIds;
 	List<String> discountIds;
 	List<String> orderIds;

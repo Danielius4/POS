@@ -35,7 +35,7 @@ public class ItemsController {
 		return new ArrayList<>();
 	}
 	@GetMapping("/{itemId}")
-	@Operation(summary = "Show what tax, discount, order ids are associated with the item.")
+	@Operation(summary = "Show what tax, discount, order ids are associated with the item. Limit, offset, sorting is applied to lists of taxes, discounts, orders one by one.")
 	public ItemGetResponse get(
 			@PathVariable String itemId,
 			@RequestParam(defaultValue="UNORDERED") QuerySorting.Sorting sorting,

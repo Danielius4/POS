@@ -64,7 +64,7 @@ public class ItemsController {
 	public void discount(@PathVariable String itemId, @RequestParam String discountId) {
 		return;
 	}
-	@DeleteMapping("/{itemId}")
+	@DeleteMapping("/{itemId}/")
 	public void delete(@PathVariable String itemId) {
 		return;
 	}

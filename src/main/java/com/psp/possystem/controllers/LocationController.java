@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.Operation;
-
 @RequestMapping("/locations")
 @RestController
 public class LocationController {
@@ -43,7 +41,7 @@ public class LocationController {
 			) {
 		return Arrays.asList(new ExistingLocation("table", "bimbim"), new ExistingLocation("table2", "bimbom"));
 	}
-	@DeleteMapping("/{locationId}")
+	@DeleteMapping("/{locationId}/")
 	public ExistingLocation deleteLocation(@PathVariable String locationId) {
 		ExistingLocation location = new ExistingLocation("chair", "bimbim");
 		location.id = locationId;

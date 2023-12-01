@@ -64,6 +64,11 @@ public class ItemsController {
 	public void discount(@PathVariable String itemId, @RequestParam String discountId) {
 		return;
 	}
+	@PutMapping("/{itemId}/tax")
+	@Operation(summary = "Applies already created tax to the item")
+	public void tax(@PathVariable String itemId, @RequestParam String taxId) {
+		return;
+	}
 	@DeleteMapping("/{itemId}/")
 	public void delete(@PathVariable String itemId) {
 		return;

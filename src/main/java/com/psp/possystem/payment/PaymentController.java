@@ -67,7 +67,7 @@ public class PaymentController {
 
     @GetMapping("/{paymentId}/points")
     public PointResponse getPointsForPayment(@PathVariable int paymentId){
-        return new PointResponse(new PaymentResponse().loaltyPointsGained, 123.4);
+        return new PointResponse(new PaymentResponse().loyaltyPointsGained, 123.4);
     }
 
     // WTF?

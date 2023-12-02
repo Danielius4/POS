@@ -1,25 +1,23 @@
 package com.psp.possystem.payment;
 
-
 import com.psp.possystem.payment.dto.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.HttpRetryException;
+import com.psp.possystem.discount.dto.DiscountResponse;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
+
 @RestController
 @RequestMapping("api/payments")
 @Tag(name = "Payments")
 public class PaymentController {
 
     @GetMapping("/query")
-    public List<PaymentResponse> findByQuery(
+    public ResponseEntity<List<PaymentResponse>> findByQuery(
             @RequestParam double startfinalPrice,
             @RequestParam double endfinalPrice,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) OffsetDateTime startDate,
@@ -29,7 +27,7 @@ public class PaymentController {
         List<PaymentResponse> payments = new ArrayList<>();
         payments.add(new PaymentResponse());
 
-        return payments;
+        return ResponseEntity.ok(payments);
     }
 
     @PutMapping("/{paymentId}/tip")
@@ -42,11 +40,9 @@ public class PaymentController {
         }
     }
 
-
     @PutMapping("/{paymentId}/loyalty")
     @Operation(summary = "Update loyalty information for a payment", description = "Updates loyalty information for a specific payment.")
     public ResponseEntity<String> updateLoyaltyForPayment(@PathVariable Long paymentId, @RequestBody LoyaltyUpdateRequest loyaltyUpdateRequest) {
-
         if (loyaltyUpdateRequest != null) {
             return ResponseEntity.ok("Loyalty information updated successfully.");
         } else {
@@ -57,7 +53,6 @@ public class PaymentController {
     @PutMapping("/{paymentId}/pay")
     @Operation(summary = "Update payment information for a payment", description = "Updates payment information, including payment type and amount, for a specific payment.")
     public ResponseEntity<String> updatePaymentForPayment(@PathVariable Long paymentId, @RequestBody PaymentUpdateRequest paymentUpdateRequest) {
-
         if (paymentUpdateRequest != null) {
             return ResponseEntity.ok("Payment information updated successfully.");
         } else {
@@ -66,22 +61,25 @@ public class PaymentController {
     }
 
     @GetMapping("/{paymentId}/points")
-    public PointResponse getPointsForPayment(@PathVariable int paymentId){
-        return new PointResponse(new PaymentResponse().loyaltyPointsGained, 123.4);
+    public ResponseEntity<PointResponse> getPointsForPayment(@PathVariable int paymentId) {
+        PointResponse pointResponse = new PointResponse(new PaymentResponse().loyaltyPointsGained, 123.4);
+        return ResponseEntity.ok(pointResponse);
     }
 
-    // WTF?
     @GetMapping("/{paymentId}/discounts")
-    @Operation(summary = " ", description = "")
-    public void getDiscountsForPayment(@PathVariable int paymentId){
-        return ;
+    @Operation(summary = "Get discounts for a payment", description = "Returns information about discounts for a specific payment.")
+    public ResponseEntity<List<DiscountResponse>> getDiscountsForPayment(@PathVariable int paymentId) {
+        List<DiscountResponse> discountResponses = new ArrayList<>();
+        discountResponses.add(new DiscountResponse());
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{paymentId}/taxes")
     @Operation(summary = "Get tax information for a payment", description = "Returns information about taxes for a specific payment.")
-    public TaxesResponse getTaxesForPayment(@PathVariable int paymentId) {
+    public ResponseEntity<TaxesResponse> getTaxesForPayment(@PathVariable int paymentId) {
         PaymentResponse res = new PaymentResponse();
-        return new TaxesResponse(res.finalPrice * 0.1, res.finalPrice * 0.2);
+        TaxesResponse taxesResponse = new TaxesResponse(res.finalPrice * 0.1, res.finalPrice * 0.2);
+        return ResponseEntity.ok(taxesResponse);
     }
 
     @GetMapping("/{paymentId}/price")

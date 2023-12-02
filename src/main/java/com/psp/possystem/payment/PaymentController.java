@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Date;
 @RestController
 @RequestMapping("api/payments")
-@Tag(name = "payment controller")
+@Tag(name = "Payments")
 public class PaymentController {
 
     @GetMapping("/query")

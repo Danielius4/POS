@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/customers")
-@Tag(name = "customer controller")
+@Tag(name = "Customers")
 public class CustomerController {
     @GetMapping("/{id}")
     @Operation(summary = "Get customer", description = "Get customer by ID")

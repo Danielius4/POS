@@ -7,10 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
 @RequestMapping("/items")
+@Tag(name = "Items")
 @RestController
 public class ItemsController {
 	@ResponseStatus(HttpStatus.CREATED)

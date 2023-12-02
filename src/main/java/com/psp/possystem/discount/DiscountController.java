@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/discounts")
-@Tag(name = "discounts controller")
+@Tag(name = "Discounts")
 public class DiscountController {
     @PostMapping("/")
     @Operation(summary = "Create discount", description = "Create new discount")

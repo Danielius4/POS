@@ -21,7 +21,7 @@ import com.psp.possystem.query.QuerySorting;
 
 @RestController
 @RequestMapping("/api/employees")
-@Tag(name = "Employee")
+@Tag(name = "Employees")
 public class EmployeeController {
 
     // 1. POST /employees/

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/clients")
-@Tag(name = "clients controller")
+@Tag(name = "Clients")
 public class ClientController {
     @GetMapping("/authenticate")
     @Operation(summary = "Get auth client token")

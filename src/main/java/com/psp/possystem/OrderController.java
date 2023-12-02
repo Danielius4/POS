@@ -21,7 +21,7 @@ import com.psp.possystem.query.QuerySorting;
 
 @RestController
 @RequestMapping("/api")
-@Tag(name = "Order", description = "Order endpoints")
+@Tag(name = "Orders")
 public class OrderController {
 
     // 0. GET /orders/{order_id}

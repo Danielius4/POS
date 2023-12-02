@@ -63,15 +63,6 @@ public class OrderController {
         throw Exceptions.NotImplementedException;
     }
 
-    // 3. GET /orders/kitchen - order details for kitchen
-    // TODO: išsiaiškint kas čia per endpointas vapšie, man visiškai neaišku nei
-    // kaip request'as turėtų atordoyt, nei response'as.
-    @RequestMapping(value = "/{orderId}/kitchen", method = RequestMethod.GET)
-    @ResponseBody
-    public void kitchen(@PathVariable int orderId) {
-        throw Exceptions.NotImplementedException;
-    }
-
     // 4. PUT /orders/{order id}/ - replace existing order
     @RequestMapping(value = "/{orderId}/", method = RequestMethod.PUT)
     @ResponseBody

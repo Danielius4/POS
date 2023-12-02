@@ -64,16 +64,16 @@ public class EmployeeController {
     }
 
     // 4. DELETE /employees/{employee id}
-    @RequestMapping(value = "/{employee_id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{employeeId}", method = RequestMethod.DELETE)
     @ResponseBody
-    public void delete(@PathVariable int employee_id) {
+    public void delete(@PathVariable int employeeId) {
         throw Exceptions.NotImplementedException;
     }
 
     // 5. GET /employees/{employee_id}/tips - tips of an employee
     @RequestMapping(value = "/{employee_id}/tips", method = RequestMethod.GET)
     @ResponseBody
-    public int tips(@PathVariable int employee_id) {
+    public int tips(@PathVariable int employeeId) {
         throw Exceptions.NotImplementedException;
     }
 
@@ -83,9 +83,9 @@ public class EmployeeController {
      * @param employee_id      - employee Id.
      * @param permission_name  - name of the permission to give
      */
-    @RequestMapping(value = "/{employee_id}/permit/{permission_name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{employeeId}/permit/{permission_name}", method = RequestMethod.GET)
     @ResponseBody
-    public void permit(@PathVariable int employee_id, @PathVariable String permission_name) {
+    public void permit(@PathVariable int employeeId, @PathVariable String permission_name) {
         throw Exceptions.NotImplementedException;
     }
 
@@ -94,9 +94,9 @@ public class EmployeeController {
      * @param employee_id      - employee Id.
      * @param permission_name  - name of the permission to give
      */
-    @RequestMapping(value = "/{employee_id}/unpermit/{permission_name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{employeeId}/unpermit/{permission_name}", method = RequestMethod.GET)
     @ResponseBody
-    public void unpermit(@PathVariable int employee_id, @PathVariable String permission_name) {
+    public void unpermit(@PathVariable int employeeId, @PathVariable String permission_name) {
         throw Exceptions.NotImplementedException;
     }
 }

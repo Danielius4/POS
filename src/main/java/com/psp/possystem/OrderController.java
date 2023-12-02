@@ -25,9 +25,9 @@ import com.psp.possystem.query.QuerySorting;
 public class OrderController {
 
     // 0. GET /orders/{order_id}
-    @RequestMapping(value = "/{order_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     @ResponseBody
-    public Order get(@PathVariable int order_id) {
+    public Order get(@PathVariable int orderId) {
         throw Exceptions.NotImplementedException;
     }
 
@@ -66,30 +66,30 @@ public class OrderController {
     // 3. GET /orders/kitchen - order details for kitchen
     // TODO: išsiaiškint kas čia per endpointas vapšie, man visiškai neaišku nei
     // kaip request'as turėtų atordoyt, nei response'as.
-    @RequestMapping(value = "/{order_id}/kitchen", method = RequestMethod.GET)
+    @RequestMapping(value = "/{orderId}/kitchen", method = RequestMethod.GET)
     @ResponseBody
-    public void kitchen(@PathVariable int order_id) {
+    public void kitchen(@PathVariable int orderId) {
         throw Exceptions.NotImplementedException;
     }
 
     // 4. PUT /orders/{order id}/ - replace existing order
-    @RequestMapping(value = "/{order_id}/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{orderId}/", method = RequestMethod.PUT)
     @ResponseBody
-    public Order reorder(@PathVariable int order_id, @RequestBody Order order) {
+    public Order reorder(@PathVariable int orderId, @RequestBody Order order) {
         throw Exceptions.NotImplementedException;
     }
 
     // 5. PATCH /orders/{order id}/complete - mark order as complete
-    @RequestMapping(value = "/{order_id}/complete", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/{orderId}/complete", method = RequestMethod.PATCH)
     @ResponseBody
-    public Order reorder(@PathVariable int order_id) {
+    public Order reorder(@PathVariable int orderId) {
         throw Exceptions.NotImplementedException;
     }
 
     // 6. PATCH /orders/{order id}/cancel - mark order as canceled
-    @RequestMapping(value = "/{order_id}/cancel", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/{orderId}/cancel", method = RequestMethod.PATCH)
     @ResponseBody
-    public void cancel(@PathVariable int order_id) {
+    public void cancel(@PathVariable int orderId) {
         throw Exceptions.NotImplementedException;
     }
 }

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/customers")
 @Tag(name = "Customers")
 public class CustomerController {
-    @GetMapping("/{id}")
+    @GetMapping("/clientId}")
     @Operation(summary = "Get customer", description = "Get customer by ID")
-    public CustomerResponse findById(@PathVariable String id) {
+    public CustomerResponse findById(@PathVariable int id) {
         return new CustomerResponse();
     }
     @PostMapping("/")
@@ -22,15 +22,15 @@ public class CustomerController {
     public CustomerResponse create(@RequestBody CustomerRequest request) {
         return new CustomerResponse();
     }
-    @PatchMapping("/{id}/add_points")
+    @PatchMapping("/{clientId}/add_points")
     @Operation(summary = "Add loyalty points")
-    public CustomerLoyaltyPointsResponse addLoyaltyPoints(@RequestBody CustomerAddLoyaltyPointsRequest request, @PathVariable String id) {
+    public CustomerLoyaltyPointsResponse addLoyaltyPoints(@RequestBody CustomerAddLoyaltyPointsRequest request, @PathVariable int clientId) {
         return new CustomerLoyaltyPointsResponse();
     }
 
-    @GetMapping("/{id}/loyalty_points")
+    @GetMapping("/{clientId}/loyalty_points")
     @Operation(summary = "get loyalty points")
-    public CustomerLoyaltyPointsResponse getLoyaltyPoints(@PathVariable String id) {
+    public CustomerLoyaltyPointsResponse getLoyaltyPoints(@PathVariable int clientId) {
         return new CustomerLoyaltyPointsResponse();
     }
 }

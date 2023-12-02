@@ -1,8 +1,9 @@
-package com.psp.possystem;
+package com.psp.possystem.appointment;
 
 import com.psp.possystem.dto.AppointmentRequest;
 import com.psp.possystem.dto.AppointmentResponse;
-import com.psp.possystem.exceptions.NotImplementedException;
+import com.psp.possystem.Common.*;
+import com.psp.possystem.dto.QuerySorting;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -10,6 +11,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -35,7 +37,7 @@ public class AppointmentController {
         throw new NotImplementedException();
     }
 
-    public QueryResponse<AppointmentResponse> query(
+    public com.psp.possystem.query.QueryResponse<AppointmentResponse> query(
         @RequestParam Optional<ZonedDateTime> fromDateTime,
         @RequestParam Optional<ZonedDateTime> tillDateTime,
         @RequestParam Optional<List<Long>> ofCustomers,

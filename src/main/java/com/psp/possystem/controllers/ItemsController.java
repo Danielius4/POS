@@ -11,7 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
-@RequestMapping("/items")
+@RequestMapping("/api/items")
 @Tag(name = "Items")
 @RestController
 public class ItemsController {

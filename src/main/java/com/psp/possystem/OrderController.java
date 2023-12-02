@@ -20,19 +20,19 @@ import com.psp.possystem.query.QueryResponse;
 import com.psp.possystem.query.QuerySorting;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/orders")
 @Tag(name = "Orders")
 public class OrderController {
 
     // 0. GET /orders/{order_id}
-    @RequestMapping(value = "/orders/{order_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{order_id}", method = RequestMethod.GET)
     @ResponseBody
     public Order get(@PathVariable int order_id) {
         throw Exceptions.NotImplementedException;
     }
 
     // 1. POST /orders/
-    @RequestMapping(value = "/orders/", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseBody
     public Order create(@RequestBody Order order) {
         throw Exceptions.NotImplementedException;
@@ -50,7 +50,7 @@ public class OrderController {
      * @param ofEmployees  - if not specified all orders with specified
      *                     employeeIds are queried, if specified but empty - none.
      */
-    @RequestMapping(value = "/orders/query", method = RequestMethod.GET)
+    @RequestMapping(value = "/query", method = RequestMethod.GET)
     @ResponseBody
     public QueryResponse<Order> query(
             QuerySorting sorting,
@@ -66,28 +66,28 @@ public class OrderController {
     // 3. GET /orders/kitchen - order details for kitchen
     // TODO: išsiaiškint kas čia per endpointas vapšie, man visiškai neaišku nei
     // kaip request'as turėtų atordoyt, nei response'as.
-    @RequestMapping(value = "/orders/{order_id}/kitchen", method = RequestMethod.GET)
+    @RequestMapping(value = "/{order_id}/kitchen", method = RequestMethod.GET)
     @ResponseBody
     public void kitchen(@PathVariable int order_id) {
         throw Exceptions.NotImplementedException;
     }
 
     // 4. PUT /orders/{order id}/ - replace existing order
-    @RequestMapping(value = "/orders/{order_id}/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{order_id}/", method = RequestMethod.PUT)
     @ResponseBody
     public Order reorder(@PathVariable int order_id, @RequestBody Order order) {
         throw Exceptions.NotImplementedException;
     }
 
     // 5. PATCH /orders/{order id}/complete - mark order as complete
-    @RequestMapping(value = "/orders/{order_id}/complete", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/{order_id}/complete", method = RequestMethod.PATCH)
     @ResponseBody
     public Order reorder(@PathVariable int order_id) {
         throw Exceptions.NotImplementedException;
     }
 
     // 6. PATCH /orders/{order id}/cancel - mark order as canceled
-    @RequestMapping(value = "/orders/{order_id}/cancel", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/{order_id}/cancel", method = RequestMethod.PATCH)
     @ResponseBody
     public void cancel(@PathVariable int order_id) {
         throw Exceptions.NotImplementedException;

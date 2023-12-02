@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@RequestMapping("/locations")
+@RequestMapping("/api/locations")
 @Tag(name = "Locations")
 @RestController
 public class LocationController {

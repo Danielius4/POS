@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/customers")
 @Tag(name = "Customers")
 public class CustomerController {
-    @GetMapping("/customerId}")
+    @GetMapping("/{customerId}")
     @Operation(summary = "Get customer", description = "Get customer by ID")
     public CustomerResponse findById(@PathVariable int cusomterId) {
         return new CustomerResponse();

@@ -1,9 +1,10 @@
 package com.psp.possystem.appointment;
 
-import com.psp.possystem.dto.AppointmentRequest;
-import com.psp.possystem.dto.AppointmentResponse;
-import com.psp.possystem.Common.*;
-import com.psp.possystem.dto.QuerySorting;
+import com.psp.possystem.appointment.dto.AppointmentRequest;
+import com.psp.possystem.appointment.dto.AppointmentResponse;
+import com.psp.possystem.query.QueryResponse;
+import com.psp.possystem.query.QuerySorting;
+
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -37,7 +38,7 @@ public class AppointmentController {
         throw new NotImplementedException();
     }
 
-    public com.psp.possystem.query.QueryResponse<AppointmentResponse> query(
+    public QueryResponse<AppointmentResponse> query(
         @RequestParam Optional<ZonedDateTime> fromDateTime,
         @RequestParam Optional<ZonedDateTime> tillDateTime,
         @RequestParam Optional<List<Long>> ofCustomers,

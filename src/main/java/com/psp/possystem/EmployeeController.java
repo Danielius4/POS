@@ -54,9 +54,9 @@ public class EmployeeController {
     @RequestMapping(value = "/query", method = RequestMethod.GET)
     @ResponseBody
     public QueryResponse<Employee> query(
-            @RequestParam(defaultValue = "UNORDERED") QuerySorting.Sorting sorting,
+            QuerySorting sorting,
             @RequestParam(defaultValue = "100") int limit,
-            @RequestParam(defaultValue = "100") int offset,
+            @RequestParam(defaultValue = "0") int offset,
             @RequestParam Optional<List<String>> ofEmails,
             @RequestParam Optional<List<String>> ofPhoneNumbers,
             @RequestParam Optional<List<String>> ofCustomers) {

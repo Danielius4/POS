@@ -1,5 +1,10 @@
 package com.psp.possystem.query;
 
 public class QuerySorting {
-    public enum Sorting { DESCENDING, ASCENDING, UNORDERED; } 
+    public enum SortingOrder {
+        ASCENDING, DESCENDING
+    }
+
+    String sortBy;
+    SortingOrder order;
 }

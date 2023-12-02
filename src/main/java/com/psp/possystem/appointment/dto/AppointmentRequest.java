@@ -1,4 +1,4 @@
-package com.psp.possystem.dto;
+package com.psp.possystem.appointment.dto;
 
 import java.time.ZonedDateTime;
 

@@ -53,9 +53,9 @@ public class OrderController {
     @RequestMapping(value = "/orders/query", method = RequestMethod.GET)
     @ResponseBody
     public QueryResponse<Order> query(
-            @RequestParam(defaultValue = "UNORDERED") QuerySorting.Sorting sorting,
+            QuerySorting sorting,
             @RequestParam(defaultValue = "100") int limit,
-            @RequestParam(defaultValue = "100") int offset,
+            @RequestParam(defaultValue = "0") int offset,
             @RequestParam Optional<ZonedDateTime> fromDateTime,
             @RequestParam Optional<ZonedDateTime> tillDateTime,
             @RequestParam Optional<List<Integer>> ofCustomers,

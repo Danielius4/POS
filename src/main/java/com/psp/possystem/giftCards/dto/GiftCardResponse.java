@@ -1,4 +1,4 @@
-package com.psp.possystem.dto;
+package com.psp.possystem.giftCards.dto;
 
 public class GiftCardResponse {
 
